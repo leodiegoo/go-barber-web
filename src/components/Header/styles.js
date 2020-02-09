@@ -10,8 +10,8 @@ export const Content = styled.div`
   max-width: 900px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   nav {
     display: flex;
@@ -29,7 +29,7 @@ export const Content = styled.div`
     }
   }
 
-  aside: {
+  aside {
     display: flex;
     align-items: center;
   }
@@ -60,6 +60,7 @@ export const Profile = styled.div`
 
   img {
     height: 32px;
+    width: 32px;
     border-radius: 50%;
   }
 `;
