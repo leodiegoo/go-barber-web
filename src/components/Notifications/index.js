@@ -15,7 +15,9 @@ import {
 
 export default function Notifications() {
   const [visible, setVisible] = useState(false);
-  const [notifications, setNotifications] = useState(false);
+  const [notifications, setNotifications] = useState([]);
+
+  console.tron.log(notifications);
 
   const hasUnread = useMemo(
     () => !!notifications.find(notification => notification.read === false),
@@ -45,7 +47,7 @@ export default function Notifications() {
   }
 
   async function handleMarkAsRead(id) {
-    await api.put(`notification/${id}`);
+    await api.put(`notifications/${id}`);
 
     setNotifications(
       notifications.map(notification =>

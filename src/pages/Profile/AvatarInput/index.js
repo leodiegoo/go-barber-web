@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 
 import api from '~/services/api';
-
 import { Container } from './styles';
 
 export default function AvatarInput() {
@@ -21,11 +20,11 @@ export default function AvatarInput() {
         path: 'dataset.file',
       });
     }
-  }, [ref, registerField]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ref]);
 
   async function handleChange(e) {
     const data = new FormData();
-
     data.append('file', e.target.files[0]);
 
     const response = await api.post('files', data);
@@ -43,7 +42,7 @@ export default function AvatarInput() {
           src={
             preview || 'https://api.adorable.io/avatars/50/abott@adorable.png'
           }
-          alt=""
+          alt="Avatar"
         />
         <input
           type="file"
