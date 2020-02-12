@@ -40,7 +40,6 @@ export default function Dashboard() {
       const data = range.map(hour => {
         const checkDate = setSeconds(setMinutes(setHours(date, hour), 0), 0);
         const compareDate = utcToZonedTime(checkDate, timezone);
-        console.tron.log(checkDate, compareDate);
         return {
           time: `${hour}:00h`,
           past: isBefore(compareDate, new Date()),
